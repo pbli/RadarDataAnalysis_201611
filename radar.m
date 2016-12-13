@@ -1,7 +1,7 @@
 close all
 clear
 clc
-delete *.png
+delete *.pdf
 
 %read file. fileName, dataRanges may need modification for different scenarios
 fileName='Scenario_crossing_left_to_right_50mph.csv';
@@ -38,21 +38,7 @@ for i=0:3
 end
 
 %plot trajectory
-figure
-plot(refPV_XY(:,1),refPV_XY(:,2),'r','LineWidth',2)
-hold on
-plot(radPV_XY(:,1),radPV_XY(:,2),'b','LineWidth',2)
-set(gca,'FontSize',15)
-minRange=min(min(radPV_XY(:,1)),min(radPV_XY(:,2)))-5;
-maxRange=max(max(radPV_XY(:,1)),max(radPV_XY(:,2)))+5;
-xlim([minRange maxRange ]);%square plot space
-ylim([minRange maxRange ]);
-legend('Reference trajectory','Radar measured trajectory');
-title('trajectory plot')
-xlabel('X (m)')
-ylabel('Y (m)')
-grid on
-print('trajectory Plot','-dpng')
+PlotTrajectory(radPV_XY,refPV_XY);
 
 %lifetime error calculation
 %ePx,ePy,eVx,eVy
@@ -84,20 +70,8 @@ for i=1:length(t)
     end
 end
 
-%plot the segmention result
-figure
-plot(t,isMove,'LineWidth',2)
-hold on
-%normalized position (range)
-plot(t,sqrt(radPV_XY(:,1).^2+radPV_XY(:,2).^2)/...
-    max(sqrt(radPV_XY(:,1).^2+radPV_XY(:,2).^2)),'LineWidth',2)
-set(gca,'FontSize',15)
-title('Sgmenattion of process')
-xlabel('t(s)')
-grid on
-legend('Move1Static0','Normalized range','Location','South')
-print('SegmentationPlot','-dpng')
-
+%plot the segmention result with a function
+PlotSegmentationResult(t,radPV_XY,refPV_XY,isMove);
 %check segmentation result
 hasSeg=0;
 temp=1;
