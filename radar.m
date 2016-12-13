@@ -37,7 +37,7 @@ for i=0:3
     radPV_XY(:,i+1)=radData(:,objNum+i*objTltNum);
 end
 
-%plot trajactory
+%plot trajectory
 figure
 plot(refPV_XY(:,1),refPV_XY(:,2),'r','LineWidth',2)
 hold on
@@ -47,12 +47,12 @@ minRange=min(min(radPV_XY(:,1)),min(radPV_XY(:,2)))-5;
 maxRange=max(max(radPV_XY(:,1)),max(radPV_XY(:,2)))+5;
 xlim([minRange maxRange ]);%square plot space
 ylim([minRange maxRange ]);
-legend('Reference trajactory','Radar measured trajactory');
-title('Trajactory plot')
+legend('Reference trajectory','Radar measured trajectory');
+title('trajectory plot')
 xlabel('X (m)')
 ylabel('Y (m)')
 grid on
-print('TrajactoryPlot','-dpng')
+print('trajectory Plot','-dpng')
 
 %lifecycle error calculation
 %ePx,ePy,eVx,eVy
