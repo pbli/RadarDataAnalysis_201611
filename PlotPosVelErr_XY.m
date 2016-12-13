@@ -15,20 +15,20 @@ for i=1:4
         'PaperPosition',[-1, 0, 29, 22]);
     switch i
         case 1
-            title('Position X')
+            title('Position on X axis')
             ylabel('m') 
-            legend('rad','ref' ,'Location','SouthEast')
+            legend('Reference Data','Radar Data' ,'Location','SouthEast')
             print(FigH,'-dpdf','Position on X axis.pdf')
         case 2
-            title('Position Y')
+            title('Position on Y axis')
             ylabel('m')            
             print(FigH,'-dpdf','Position on Y axis.pdf')
         case 3
-            title('Velocity X')
+            title('Velocity on X axis')
             ylabel('m/s')            
             print(FigH,'-dpdf','Velocity on X axis.pdf')
         case 4
-            title('Velocity Y')
+            title('Velocity on Y axis')
             ylabel('m/s')            
             print(FigH,'-dpdf','Velocity on Y axis.pdf')
     end
@@ -44,19 +44,19 @@ for i=1:4
         'PaperPosition',[-1, 0, 29, 22]);
     switch i
         case 1
-            title('Position error X')
+            title('Position error on X axis')
             ylabel('m')
             print(FigH,'-dpdf','Possition error on X axis.pdf')
         case 2
-            title('Position error Y')
+            title('Position error on Y axis')
             ylabel('m')
             print(FigH,'-dpdf','Position error on Y axis.pdf')            
         case 3
-            title('Velocity error X')
+            title('Velocity error on X axis')
             ylabel('m/s')
             print(FigH,'-dpdf','Velocity error on X axis.pdf')            
         case 4
-            title('Velocity error Y')
+            title('Velocity error on Y axis')
             ylabel('m/s')
             print(FigH,'-dpdf','Velocity error on Y axis.pdf')            
     end
