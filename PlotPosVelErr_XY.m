@@ -7,8 +7,7 @@ for i=1:4
     plot(t,radPV_XY(:,i),'b','LineWidth',1.5)
     set(gca,'FontSize',13)
     grid on
-    legend('ref','rad')    
-    xlim([0 max(t)+3] )% make sure the legend will not cover the plot
+    legend('Reference Data','Radar Data')    
     xlabel('t(s)')
     set(gcf,'PaperType','usletter', ...
         'paperOrientation', 'landscape', ...
@@ -35,9 +34,8 @@ for i=1:4
     end
 
     FigH = figure;
-    bar(t,errPV_XY(:,i),'b')
+    plot(t,errPV_XY(:,i),'b','LineWidth',1.5) 
     set(gca,'FontSize',13)
-    xlim([0 max(t)+3])
     xlabel('t(s)')
     grid on
     set(gcf,'PaperType','usletter', ...
@@ -60,8 +58,7 @@ for i=1:4
         case 4
             title('Velocity error Y')
             ylabel('m/s')
-            print(FigH,'-dpdf','Velocity error on Y axis.pdf')
-            
+            print(FigH,'-dpdf','Velocity error on Y axis.pdf')            
     end
 end
 
