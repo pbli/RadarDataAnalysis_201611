@@ -39,7 +39,7 @@ for i=1:4
             title('Position X')
             ylabel('m')
             ylim([Pmin Pmax])        
-            legend('rad','ref' ,'Location','South')
+            legend('rad','ref' ,'Location','SouthEast')
         case 2
             title('Position Y')
             ylabel('m')
@@ -53,12 +53,12 @@ for i=1:4
             ylim([Vmin Vmax])
             ylabel('m/s')
     end
-    xlim([0 max(t)+10] )% make sure the legend will not cover the plot
+    xlim([0 max(t)+3] )% make sure the legend will not cover the plot
     xlabel('t(s)')
     subplot(1,2,2)
     bar(t,errPV_XY(:,i))
     set(gca,'FontSize',15)
-    xlim([0 max(t)+10])
+    xlim([0 max(t)+3])
     xlabel('t(s)')
     grid on
     axis square;
@@ -75,11 +75,11 @@ for i=1:4
         case 2
             title('Position error Y')
             ylabel('m')
-            ylim([ePmin ePmax])            
+            ylim([ePmin ePmax])
             print(FigH,'-dpdf','Y position and error.pdf')            
         case 3
             title('Velocity error X')
-            ylabel('m/s')
+            ylabel('m/s')            
             ylim([eVmin eVmax])
             print(FigH,'-dpdf','X velocity and error.pdf')            
         case 4
