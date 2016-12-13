@@ -35,19 +35,19 @@ for i=1:4
         case 1
             title('Position error X')
             ylabel('m')
-            print('PositionX','-dpng')
+            print('Position and error at X axis','-dpng')
         case 2
             title('Position error Y')
             ylabel('m')
-            print('PositionY','-dpng')
+            print('Position and error at Y axis','-dpng')
         case 3
             title('Velocity error X')
             ylabel('m/s')
-            print('VelocityX','-dpng')
+            print('Velocity and error at X axis','-dpng')
         case 4
             title('Velocity error Y')
             ylabel('m/s')
-            print('VelocityY','-dpng')
+            print('Velocity and error at Y axis','-dpng')
     end
 end
 
