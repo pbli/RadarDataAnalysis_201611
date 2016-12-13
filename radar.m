@@ -54,7 +54,7 @@ ylabel('Y (m)')
 grid on
 print('trajectory Plot','-dpng')
 
-%lifecycle error calculation
+%lifetime error calculation
 %ePx,ePy,eVx,eVy
 errPV_XY=radPV_XY-refPV_XY;
 %mean, std(ePx,ePy,eVx,eVy)
@@ -139,14 +139,14 @@ end
 %Statistical result report
 reportFileName='Report.csv';
 fid = fopen(reportFileName, 'w') ;
-%lifecycle error of Px,Py,Vx,Vy
+%lifetime error of Px,Py,Vx,Vy
 fprintf(fid,'%s,%s,%s,%s,%s,%s\n',...
     ' ','Time(s)','E_Pos_X(m)','E_Pos_Y(m)','E_Vel_X(m/s)','E_Vel_Y(m/s)');
 fprintf(fid,'%s,%s,%f,%f,%f,%f\n','Mean',strcat('0 --  ',num2str(max(t))),...
     meanLifeErrPV_XY(:));
 fprintf(fid,'%s,%s,%f,%f,%f,%f\n','Std',strcat('0 --  ',num2str(max(t))),...
     stdLifeErrPV_XY(:));
-%if has segmentations, write segmented errors under lifecycle results in the form
+%if has segmentations, write segmented errors under lifetime results in the form
 if hasSeg==1
     fprintf(fid,'%s,%s,%f,%f,%f,%f\n','MeanSeg_1',strcat('0 --  ',num2str(tTran(1))),...
         meanSegErrPV_XY(1,:));
