@@ -1,5 +1,4 @@
 function [  ] = PlotPosVelErr_XY(refPV_XY,radPV_XY,errPV_XY,t)
-
 for i=1:4
     FigH = figure;
     plot(t,refPV_XY(:,i),'r','LineWidth',3) 

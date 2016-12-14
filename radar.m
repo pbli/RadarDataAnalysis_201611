@@ -20,7 +20,7 @@ segThreshold=1.4; % control segmentation: 1.1-1.4 segment to 3, >1.8 no segmenta
 %find the number of the relavant object based on range
 costFun=zeros(objTltNum,1);
 for i=1:objTltNum
-    costFun(i)=mean(sqrt(radData(:,i).^2+radData(:,i+objTltNum).^2)-refData(:,1));
+    costFun(i)=mean(abs(sqrt(radData(:,i).^2+radData(:,i+objTltNum).^2)-refData(:,1)));
 end
 [costFunMin, objNum]=min(costFun);
 objNum
